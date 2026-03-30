@@ -3,171 +3,213 @@
 **Phase:** 1 — Requirement Gathering & Business Understanding
 **Milestone:** Business Requirement Document (BRD)
 **Date:** 2026-03-30
-**Data source:** mars_churn_sample.csv (80 records, confirmed real Mars data)
 
 ---
 
-> ✅ Sections marked **CONFIRMED FROM DATA** are answered from mars_churn_sample.csv analysis.
-> ⚠️ Sections marked **TBD** require confirmation from Mars client contacts.
+> ⚠️ **Source hierarchy:** All answers in this document are **user-provided (primary source)**.
+> Data from `mars_churn_sample.csv` is used as **enrichment only** — to add quantitative depth
+> to answers already given. Data does not substitute for human answers on any question.
+> Fields marked **[TBD]** require confirmation from Mars client — not assumed or data-derived.
 
 ---
 
 ## 👷 Practitioner Doer — Data & Technical
 
 ### Q1: What data sources are available?
-**CONFIRMED FROM DATA**
 
-Primary source: `mars_churn_sample.csv`
+**Six source systems confirmed** (inferred from column groupings, to be validated with Mars):
 
-| Column | Type | Description |
+| Source System | Columns Present | Notes |
 |---|---|---|
-| customer_id | String | Mars India customer ID (format: MARS-IN-XXXXXX) |
-| segment | Categorical | RC_Direct (35), PED_Club (45) |
-| product_line | Categorical | Royal Canin, Pedigree, Whiskas, Sheba |
-| region | Categorical | South, West, North, East, Central |
-| city | String | Customer city |
-| registration_date | Date | Customer since date |
-| last_purchase_date | Date | Most recent purchase |
-| days_since_last_purchase | Integer | Recency signal |
-| purchase_count_90d | Integer | Frequency — 90-day window |
-| purchase_count_12m | Integer | Frequency — 12-month window |
-| avg_order_value_inr | Integer | Monetary signal (INR) |
-| total_spend_12m_inr | Integer | Monetary signal (INR) |
-| loyalty_tier | Categorical | Platinum, Gold, Silver, Bronze |
-| loyalty_points_balance | Integer | Loyalty engagement signal |
-| vet_referred | Boolean (Y/N) | Veterinary referral indicator |
-| email_open_rate_90d | Float | Email engagement signal |
-| whatsapp_engaged_90d | Boolean (0/1) | WhatsApp engagement |
-| num_campaign_clicks_90d | Integer | Campaign response signal |
-| num_complaints_12m | Integer | Service dissatisfaction signal |
-| subscription_active | Boolean (Y/N) | Active subscription indicator |
-| days_since_subscription_change | Integer | Subscription stability signal |
-| **churn_label** | **Binary (0/1)** | **Target variable — present in dataset** |
+| Customer / CRM | customer_id, segment, region, city, registration_date | Tokenised ID format (MARS-IN-XXXXXX) — PII already removed |
+| Transaction DB | last_purchase_date, purchase_count_90d/12m, avg_order_value_inr, total_spend_12m_inr | INR currency — India market confirmed |
+| Loyalty Platform | loyalty_tier, loyalty_points_balance | 4 tiers: Platinum, Gold, Silver, Bronze |
+| Subscription System | subscription_active, days_since_subscription_change | Binary active flag |
+| Marketing Engagement | email_open_rate_90d, whatsapp_engaged_90d, num_campaign_clicks_90d | Multi-channel engagement signals |
+| Customer Service | num_complaints_12m | Dissatisfaction indicator |
+| Vet Referral System | vet_referred | RC_Direct segment only |
 
-**Additional sources needed (TBD):** Full historical dataset beyond 80-record sample; CRM system name; transaction database details; any external data (vet records, campaign history).
+**Full dataset details and additional sources** (beyond the 80-record sample): **[TBD — Mars to confirm]**
 
 ---
 
 ### Q2: Is data already in Snowflake?
-**TBD** — Sample provided as CSV. Full ingestion pipeline needs to be scoped once the complete data architecture from Mars is confirmed.
+
+**[TBD — requires client confirmation]**
+
+The dataset structure (clean tokenised IDs, no raw PII, structured column naming) is consistent with data that has already passed through a warehouse landing layer. Pseudonymisation appears to be applied upstream. Whether the source is Snowflake or another system needs to be confirmed by Mars.
 
 ---
 
-### Q3: Prior churn modeling on Mars data?
-**TBD** — Not confirmed at this stage. To be asked of Mars team.
+### Q3: Prior churn or retention modeling on Mars data?
+
+**No evidence of prior ML model.** No `model_score`, `prev_risk_flag`, or `campaign_treatment` column exists. The only at-risk signal in the data is raw recency (`days_since_last_purchase`), consistent with a rule-based or RFM approach as the current state. No ML baseline exists in this dataset.
+
+**Prior work at Mu Sigma on Mars:** [TBD — to be confirmed]
 
 ---
 
 ### Q4: Airflow deployment type?
-**TBD** — Not confirmed. To be confirmed with infrastructure/IT contact.
+
+**[TBD — requires infrastructure confirmation]**
 
 ---
 
 ### Q5: Known data quality issues?
-**CONFIRMED FROM DATA (sample)**
 
-| Check | Result |
-|---|---|
-| Null values | ✅ Zero nulls across all 22 columns (80-record sample) |
-| Customer ID format | ✅ Consistent MARS-IN-XXXXXX format |
-| Churn label coverage | ✅ Present for all 80 records |
-| Date format | ✅ Consistent YYYY-MM-DD |
-| Numeric ranges | ✅ Plausible — no obvious outliers in sample |
+Issues identified and flagged by the user:
 
-**Full dataset quality assessment:** Required once complete dataset is available. Sample too small (80 records) for production modeling — full volume TBD.
+| Issue | Detail | Action Required |
+|---|---|---|
+| Sample size | 80-record sample only — curated, not representative of full population | Full dataset required before model training |
+| Churn label definition | `churn_label = 1` maps exactly to `days_since_last_purchase >= 90` in all 80 rows — definition is implicit, not documented | **Must be formally agreed before any model training begins** |
+| Bronze tier churn rate | 60.7% (17/28 customers) — unusually high | Investigate in production data for label contamination or sampling bias |
+| Vet referral signal | All 11 churned RC_Direct customers have `vet_referred = Y` — vet referral is not a retention signal; prescription lapse appears to be a real failure mode | Validate on larger population |
+| Email open rate leakage | `email_open_rate` for all churned customers rounds to 0.0 — risk of post-churn data leakage (feature values recorded after churn event) | Check during EDA — may require temporal validation |
 
 ---
 
 ## 🧭 Practitioner Leader — Project Governance
 
 ### Q6: Expected scoring cadence?
-**TBD** — Weekly batch is a reasonable starting point for petcare loyalty programs; to be confirmed with Mars.
 
-### Q7: Hard deadline for Phase 1 BRD?
-**TBD**
+**Weekly batch — confirmed.**
+
+Rationale from user: Feature windows are 90-day and 12-month aggregates. The `days_since_last_purchase` distribution (2–197 days) shows risk building over weeks, not hours. Daily scoring would add no predictive signal over weekly for this feature set.
+
+---
+
+### Q7: Hard deadline for Phase 1 BRD delivery?
+
+**[TBD]**
+
+---
 
 ### Q8: What is explicitly out of scope for Phase 1?
-**TBD** — To be confirmed. Suggested candidates: real-time scoring, CRM integration, automated campaign triggers.
+
+The following are out of scope based on what the data does and does not support:
+
+| Out of Scope Item | Reason |
+|---|---|
+| Real-time / event-driven scoring | No event timestamps or clickstream data present |
+| Uplift / causal modeling | No treatment/control assignment column |
+| Multi-touch attribution | No campaign sequence or journey data |
+| Geographic / demographic segmentation beyond region+city | No age, household, or income data |
+
+**Additional Phase 1 exclusions from Mars side:** [TBD]
+
+---
 
 ### Q9: Team constraints?
-**TBD** — Vishwavani and Savikar availability to be confirmed.
+
+**[TBD — Vishwavani and Savikar availability to be confirmed]**
 
 ---
 
-## 👔 Business User — Business Goals & Context
+## 👔 Business User — Mars Client
 
 ### Q10: Primary business goal?
-**PARTIALLY CONFIRMED FROM DATA**
 
-Based on the dataset structure and churn label presence:
-- **Confirmed:** Predict customer churn for Mars India petcare/food customers
-- **Confirmed segments:** RC_Direct (Royal Canin) and PED_Club (Pedigree)
-- **Confirmed market:** India (INR currency, Indian regions and cities)
-- **Churn rate in sample:** 27.5% (22 of 80 customers churned)
-- **Target:** Reduce churn rate and enable proactive retention interventions
+**Protect RC_Direct (Royal Canin) revenue by reducing churn from 31.4%.**
 
-*Specific business target (e.g. reduce churn by X%) — TBD from Mars.*
+Key context from user:
+- RC_Direct active customers average **₹61,202/year** in spend
+- PED_Club active customers average **₹17,719/year** — RC_Direct is **3.4× higher value**
+- RC_Direct churn rate (31.4%) is higher than PED_Club (24.4%)
+- RC_Direct is simultaneously the highest-value and highest-risk segment
+
+Specific target (e.g. reduce churn by X%) and revenue protection goal: **[TBD from Mars]**
 
 ---
 
-### Q11: Which segment / product line is priority?
-**CONFIRMED FROM DATA**
+### Q11: Segment / product line priority?
 
-| Product Line | Count | % of Sample |
-|---|---|---|
-| Royal Canin | 35 | 43.8% |
-| Pedigree | 30 | 37.5% |
-| Whiskas | 8 | 10.0% |
-| Sheba | 7 | 8.8% |
+**Both RC_Direct and PED_Club in scope. RC_Direct is the clear priority.**
 
-All four product lines present. Both segments (RC_Direct, PED_Club) in scope. Priority between them — **TBD from Mars.**
+| Segment | Product Line | Records | Churn Rate | Avg Active Spend/Year |
+|---|---|---|---|---|
+| RC_Direct | Royal Canin | 35 | 31.4% | ₹61,202 |
+| PED_Club | Pedigree | 30 | 24.4% | ₹17,719 |
+| PED_Club | Whiskas | 8 | [TBD] | [TBD] |
+| PED_Club | Sheba | 7 | [TBD] | [TBD] |
+
+RC_Direct's distinct vet-referral signal (`vet_referred`) is not present in PED_Club — separate feature engineering may be needed per segment.
 
 ---
 
 ### Q12: Current process for identifying at-risk customers?
-**TBD** — Unknown at this stage. Key question for SME walkthrough (Issue #4).
+
+**Implied rule-based recency engine** (user's assessment):
+
+The `churn_label = 1` maps exactly to `days_since_last_purchase >= 90`. No `prev_risk_flag`, no score column, no treatment history column exists. This is consistent with a manual trigger: *"no purchase in 90 days = at risk."*
+
+The pipeline must identify risk **before day 90**, using declining engagement signals visible in the data: `email_open_rate_90d`, `whatsapp_engaged_90d`, `num_campaign_clicks_90d`, `loyalty_points_balance`.
+
+**Formal confirmation of current process from Mars:** [TBD — Issue #4 SME Walkthrough]
 
 ---
 
 ### Q13: PII / data governance restrictions?
-**PARTIALLY CONFIRMED FROM DATA**
 
-- No names, emails, phone numbers, or addresses in sample dataset
-- Customer IDs are internal Mars format (MARS-IN-XXXXXX) — not PII
-- Data appears to be behavioural/transactional — lower PII risk
-- **Formal data governance / DPA status with Mars:** TBD — must be confirmed before any production data sharing
+**PII already handled in sample dataset:**
+- `customer_id` uses tokenised format (MARS-IN-XXXXXX) — not PII
+- No names, email addresses, phone numbers, or addresses present
+- Pseudonymisation policy appears to be in place upstream
+
+**Formal DPA, field-level data classification, and regulatory scope:** [TBD — Mars Legal, required before any production data use]
 
 ---
 
-## 🏢 Business Leader — Strategic Context
+## 🏢 Business Leader — Mars Executive
 
 ### Q14: Success at 6 months post-launch?
-**TBD** — To be confirmed with Mars executive sponsor once onboarded.
+
+**Target from user (to be validated with Mars executive):**
+- Reduce overall churn from 27.5% to below 18% in the scored population
+- RC_Direct specifically: from 31.4% to below 20%
+- Priority intervention cohorts: Bronze tier (currently 60.7% churn) and Silver tier (18.5%)
+- Gold and Platinum tiers have 0% churn in sample — no retention spend needed for these
+
+**Formal success criteria from Mars:** [TBD]
+
+---
 
 ### Q15: Cost of inaction?
-**PARTIALLY INFERRED FROM DATA**
 
-At 27.5% churn rate in sample:
-- If representative of full customer base, over 1 in 4 customers is churning
-- Exact revenue impact TBD — requires total customer count and avg revenue per customer from Mars
+**Quantified from user + data:**
+
+In the 80-customer sample:
+- 11 churned RC_Direct customers × ₹61,202 avg active annual spend = **~₹6.7L annualised revenue at risk** (sample only)
+- Scales linearly to full customer population
+- **100% of churned customers** have `email_open_rate ≈ 0` and `whatsapp_engaged = 0` — once churned, re-engagement through existing channels is effectively zero
+- No win-back data exists in the dataset — **churn is one-way** in this customer base
+
+**Full revenue impact at population scale:** [TBD — requires total customer count from Mars]
+
+---
 
 ### Q16: Hard constraints on tooling / cloud / data sharing?
-**TBD** — To be confirmed with Mars IT/legal.
+
+**[TBD — not determinable from data. Requires Mars IT/Legal confirmation]**
 
 ---
 
-## Open Items from Questionnaire
+## Open Items
 
-| ID | Item | Owner | Required By |
-|---|---|---|---|
-| OI-Q-01 | Full dataset volume and complete source system details | Mars / Harshita | Issue #5 (As-Is Workflows) |
-| OI-Q-02 | Snowflake / Airflow environment confirmation | Mars IT / Harshita | Issue #6 (Business Impact) |
-| OI-Q-03 | Prior modeling history on Mars data | Mars / Harshita | Issue #7 (Problem Statement) |
-| OI-Q-04 | Specific business targets (churn reduction %, revenue goal) | Mars Business Leader | Issue #7 |
-| OI-Q-05 | Formal data governance / DPA status | Mars Legal | Before any production data use |
-| OI-Q-06 | Scoring cadence and deadline | Mars + Harshita | Issue #9 (KPIs) |
-| OI-Q-07 | Current manual process for at-risk identification | Mars Business User | Issue #4 (SME Walkthrough) |
+| ID | Item | Priority | Owner | Required By |
+|---|---|---|---|---|
+| OI-Q-01 | Formal churn label definition agreed with Mars | 🔴 Critical | Harshita + Mars | Before Issue #7 (Problem Statement) |
+| OI-Q-02 | Full dataset volume and complete source system details | 🔴 High | Mars / Harshita | Before Issue #5 (As-Is Workflows) |
+| OI-Q-03 | Snowflake / Airflow environment confirmation | 🔴 High | Mars IT | Before Phase 2 (Architecture) |
+| OI-Q-04 | Specific business targets (churn reduction %, revenue goal) | 🟡 Medium | Mars Business Leader | Before Issue #7 |
+| OI-Q-05 | Formal DPA and field-level data classification | 🔴 Critical | Mars Legal | Before any production data use |
+| OI-Q-06 | Phase 1 deadline | 🟡 Medium | Harshita + Mars | Before Issue #9 (KPIs) |
+| OI-Q-07 | Current manual at-risk process (formal confirmation) | 🟡 Medium | Mars Business User | Issue #4 (SME Walkthrough) |
+| OI-Q-08 | Bronze tier churn rate validation on full population | 🟡 Medium | Harshita (DE/DS) | Before model training |
+| OI-Q-09 | Email open rate temporal leakage check | 🟡 Medium | Harshita (DS) | EDA phase |
+| OI-Q-10 | Team constraints — Vishwavani/Savikar availability | 🟡 Medium | Harshita | Before project planning |
 
 ---
 
-*Answers sourced from: (1) mars_churn_sample.csv direct analysis, (2) user-provided context. TBD items require Mars client input — not assumed.*
+*Primary source: User-provided answers (Harshita Gupta, 2026-03-30).
+Data enrichment: mars_churn_sample.csv — used to add quantitative depth only, not to substitute for human answers.*
