@@ -1,74 +1,110 @@
 # Issue #1 — Stakeholder Identification
-**Project:** alpha-test — Churn Prediction Pipeline (Airflow + Snowflake + Python)
-**Client:** Mars
+**Project:** alpha-test | **Client:** Mars
 **Phase:** 1 — Requirement Gathering & Business Understanding
 **Milestone:** Business Requirement Document (BRD)
-**Completed:** 2026-03-30
-**Source:** User-provided answers — not assumed
+**Date:** 2026-03-30
+**Source:** User-provided answers only
 
 ---
 
-## 1. Project Stakeholders
+> ⚠️ **Note:** All stakeholder roles are currently consolidated to Harshita Gupta for Phase 1.
+> Mars client contacts (Business User / Business Leader from Mars side) to be added when onboarded.
+> This document must be updated before BRD sign-off with real Mars counterparts.
 
-| Name | Role | Team | Authority |
+---
+
+## 1. Stakeholder Register
+
+### 👷 Practitioner Doer — Decision Scientists (Execution)
+
+| Name | Role | Team | Responsibilities |
 |---|---|---|---|
-| Harshita Gupta | Project Lead | Labs | BSH — final sign-off authority |
-| Vishwavani | Team Member | Labs | Delivery |
-| Savikar Garg | Team Member | Labs | Delivery |
+| Harshita Gupta | Acting DS/DE Execution Lead | Labs, Mu Sigma | Hands-on pipeline and model execution |
+| Vishwavani | Team Member | Labs, Mu Sigma | DS/DE delivery support |
+| Savikar Garg | Team Member | Labs, Mu Sigma | DS/DE delivery support |
+
+*Skill gaps: To be confirmed*
 
 ---
 
-## 2. Pipeline Output Consumers
+### 🧭 Practitioner Leader — Project Leader
 
-| Consumer | Role in Consumption |
-|---|---|
-| Data Engineering Team | Pipeline build and operation |
-| Data Science Team | ML model development and scoring |
-| Zubin | CTO — executive visibility on output |
-| Srini | Manager — oversight and approvals |
+| Name | Role | Team | Responsibilities |
+|---|---|---|---|
+| Harshita Gupta | Project Lead / BSH | Labs, Mu Sigma | Stakeholder communication, milestone approvals, delivery governance |
 
----
-
-## 3. IT / Infosec
-
-None required at this stage.
+*Upward communication: Harshita → Srini (Manager) → Zubin (CTO)*
 
 ---
 
-## 4. Client Context
+### 👔 Business User — Client Team Members
 
-- **Client:** Mars
-- **Project type:** Client engagement
-- **Delivery team:** Mu Sigma Labs (Harshita, Vishwavani, Savikar)
+| Name | Role | Organisation | Responsibilities |
+|---|---|---|---|
+| Harshita Gupta | [Placeholder — Mars contact TBD] | Mars / Mu Sigma | Providing business and technical requirements; consuming pipeline output |
+
+*⚠️ Real Mars Business User contacts to be added when client onboarding is complete.*
 
 ---
 
-## 5. RACI Matrix
+### 🏢 Business Leader — Client Decision-Maker
 
-| Activity | Harshita (BSH) | Vishwavani | Savikar | Zubin | Srini |
+| Name | Role | Organisation | Responsibilities |
+|---|---|---|---|
+| Harshita Gupta | BSH — Final approval authority | Mu Sigma (acting) | Final deliverable approval, business impact decisions |
+| Zubin | CTO | Mu Sigma | Internal executive sponsor — executive visibility |
+| Srini | Manager | Mu Sigma | Delivery oversight and approvals |
+
+*⚠️ Real Mars executive sponsor / decision-maker to be confirmed and added before BRD sign-off.*
+
+---
+
+## 2. RACI Matrix
+
+| Activity | Harshita (BSH + all roles) | Vishwavani | Savikar | Zubin | Srini |
 |---|---|---|---|---|---|
-| BRD sign-off | **A** | C | C | I | I |
+| BRD sign-off | **A+R** | C | C | I | C |
 | Requirements gathering | **R** | R | R | I | C |
-| Architecture design | **A** | R | C | I | C |
-| Pipeline development | **A** | R | R | I | I |
-| ML model build | **A** | C | R | I | I |
-| QA & validation | **A** | R | R | I | I |
-| Deployment | **A** | R | R | I | C |
+| Architecture design | **A+R** | C | C | I | I |
+| Pipeline development | **A+R** | R | R | I | I |
+| ML model build | **A+R** | C | R | I | I |
+| QA & validation | **A+R** | R | R | I | I |
+| Deployment | **A+R** | R | R | C | C |
 | Executive reporting | **R** | I | I | **A** | C |
 
 *R=Responsible · A=Accountable · C=Consulted · I=Informed*
 
 ---
 
-## 6. Engagement Plan
+## 3. Escalation Path
 
-| Stakeholder | Cadence | Format |
-|---|---|---|
-| Harshita | Every milestone gate | Approval + review |
-| Vishwavani + Savikar | Daily during execution | Sync + task handoff |
-| Srini | Weekly | Progress update |
-| Zubin | Milestone completion | Executive summary |
+```
+Task-level issue → Harshita Gupta (immediate)
+Scope / timeline risk → Srini (Manager) — 1 business day
+Strategic / executive escalation → Zubin (CTO) — 2 business days
+```
 
 ---
 
-*All stakeholder data sourced from user input — not assumed or pulled from internal DB.*
+## 4. Engagement Plan
+
+| Stakeholder | Cadence | Format |
+|---|---|---|
+| Harshita (all roles) | Continuous | Self-review + approval at each milestone gate |
+| Vishwavani + Savikar | Daily during execution | Task sync |
+| Srini | Weekly | Progress update |
+| Zubin | Per milestone completion | Executive summary |
+
+---
+
+## 5. Open Items
+
+| ID | Item | Owner | Due |
+|---|---|---|---|
+| OI-S-01 | Identify and onboard real Mars Business User contact | Harshita | Before Issue #3 |
+| OI-S-02 | Identify Mars executive sponsor / Business Leader | Harshita | Before BRD sign-off |
+| OI-S-03 | Confirm skill gaps for Vishwavani and Savikar | Harshita | Before Issue #4 |
+
+---
+
+*All data sourced from user-provided answers. No org chart data or assumed stakeholders used.*
