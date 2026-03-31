@@ -1,0 +1,1485 @@
+{
+  "state": "ISSUE_EXECUTION",
+  "query": "i want to build a churn prediction pipeline using Airflow and an ML model to score customers",
+  "verticals": [
+    "Data Engineering",
+    "Data Science"
+  ],
+  "phases": [
+    {
+      "id": 1,
+      "name": "1. Requirement Gathering & Business Understanding",
+      "vertical": "Data Engineering",
+      "theme": "Business Requirement Document (BRD)",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 1,
+          "name": "Business Requirement Document (BRD)",
+          "phase_id": 1,
+          "issues": [
+            {
+              "id": 1,
+              "title": "Identify stakeholders using org charts",
+              "milestone_id": 1,
+              "git_issue_number": 1
+            },
+            {
+              "id": 2,
+              "title": "Prepare structured questionnaires covering goals, KPIs, pain points",
+              "milestone_id": 1,
+              "git_issue_number": 2
+            },
+            {
+              "id": 3,
+              "title": "Capture and consolidate stakeholder expectations and conflicts",
+              "milestone_id": 1,
+              "git_issue_number": 3
+            },
+            {
+              "id": 4,
+              "title": "Analyze current business processes through SME walkthroughs",
+              "milestone_id": 1,
+              "git_issue_number": 4
+            },
+            {
+              "id": 5,
+              "title": "Document as-is workflows with systems, data usage, and manual steps",
+              "milestone_id": 1,
+              "git_issue_number": 5
+            },
+            {
+              "id": 6,
+              "title": "Quantify business impact (time, cost, risk) where possible",
+              "milestone_id": 1,
+              "git_issue_number": 6
+            },
+            {
+              "id": 7,
+              "title": "Define clear problem statement aligned with business objectives",
+              "milestone_id": 1,
+              "git_issue_number": 7
+            },
+            {
+              "id": 8,
+              "title": "Map future workflows with automation opportunities",
+              "milestone_id": 1,
+              "git_issue_number": 8
+            },
+            {
+              "id": 9,
+              "title": "Identify business KPIs and define success criteria",
+              "milestone_id": 1,
+              "git_issue_number": 9
+            },
+            {
+              "id": 10,
+              "title": "Document assumptions and potential risks with mitigation approach",
+              "milestone_id": 1,
+              "git_issue_number": 10
+            },
+            {
+              "id": 11,
+              "title": "Compile BRD sections into structured document",
+              "milestone_id": 1,
+              "git_issue_number": 11
+            },
+            {
+              "id": 12,
+              "title": "Conduct review sessions and incorporate stakeholder feedback",
+              "milestone_id": 1,
+              "git_issue_number": 12
+            },
+            {
+              "id": 13,
+              "title": "Obtain formal sign-off",
+              "milestone_id": 1,
+              "git_issue_number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "10. Operations, Monitoring, Incident Management & Maintenance",
+      "vertical": "Data Engineering",
+      "theme": "Maintenance & Resolution Documentation",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 2,
+          "name": "Maintenance & Resolution Documentation",
+          "phase_id": 2,
+          "issues": [
+            {
+              "id": 14,
+              "title": "Identify recurring pipeline and infrastructure issues across environments",
+              "milestone_id": 2,
+              "git_issue_number": null
+            },
+            {
+              "id": 15,
+              "title": "Document step-by-step resolution procedures for common failures",
+              "milestone_id": 2,
+              "git_issue_number": null
+            },
+            {
+              "id": 16,
+              "title": "Maintain troubleshooting guides for ingestion, transformation, and orchestration layers",
+              "milestone_id": 2,
+              "git_issue_number": null
+            },
+            {
+              "id": 17,
+              "title": "Capture known issues, root causes, and resolution patterns",
+              "milestone_id": 2,
+              "git_issue_number": null
+            },
+            {
+              "id": 18,
+              "title": "Maintain centralized knowledge base for support teams",
+              "milestone_id": 2,
+              "git_issue_number": null
+            },
+            {
+              "id": 19,
+              "title": "Update documentation with new incidents and fixes",
+              "milestone_id": 2,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "11. Optimization & Performance Engineering",
+      "vertical": "Data Engineering",
+      "theme": "Pipeline Optimization Report",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 3,
+          "name": "Pipeline Optimization Report",
+          "phase_id": 3,
+          "issues": [
+            {
+              "id": 20,
+              "title": "Measure execution time of each pipeline stage",
+              "milestone_id": 3,
+              "git_issue_number": null
+            },
+            {
+              "id": 21,
+              "title": "Identify slow, resource-intensive, or failure-prone steps",
+              "milestone_id": 3,
+              "git_issue_number": null
+            },
+            {
+              "id": 22,
+              "title": "Analyze retries, failures, and wait times across pipelines",
+              "milestone_id": 3,
+              "git_issue_number": null
+            },
+            {
+              "id": 23,
+              "title": "Optimize task sequencing and remove unnecessary dependencies",
+              "milestone_id": 3,
+              "git_issue_number": null
+            },
+            {
+              "id": 24,
+              "title": "Parallelize independent processing steps",
+              "milestone_id": 3,
+              "git_issue_number": null
+            },
+            {
+              "id": 25,
+              "title": "Reduce redundant transformations and duplicate operations",
+              "milestone_id": 3,
+              "git_issue_number": null
+            },
+            {
+              "id": 26,
+              "title": "Compare before/after execution performance",
+              "milestone_id": 3,
+              "git_issue_number": null
+            },
+            {
+              "id": 27,
+              "title": "Document improvements in runtime and reliability",
+              "milestone_id": 3,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "12. DevOps Engineering & CI/CD",
+      "vertical": "Data Engineering",
+      "theme": "Code Versioning",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 4,
+          "name": "Code Versioning",
+          "phase_id": 4,
+          "issues": [
+            {
+              "id": 28,
+              "title": "Define repository structure for pipelines, transformation logic, and configurations",
+              "milestone_id": 4,
+              "git_issue_number": null
+            },
+            {
+              "id": 29,
+              "title": "Create repositories per project, domain, or module",
+              "milestone_id": 4,
+              "git_issue_number": null
+            },
+            {
+              "id": 30,
+              "title": "Implement branching strategy for parallel development and releases",
+              "milestone_id": 4,
+              "git_issue_number": null
+            },
+            {
+              "id": 31,
+              "title": "Maintain version control for pipeline code, schemas, and configurations",
+              "milestone_id": 4,
+              "git_issue_number": null
+            },
+            {
+              "id": 32,
+              "title": "Enforce commit standards and naming conventions",
+              "milestone_id": 4,
+              "git_issue_number": null
+            },
+            {
+              "id": 33,
+              "title": "Apply version tagging for releases and traceability",
+              "milestone_id": 4,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "2. Data Discovery & Profiling",
+      "vertical": "Data Engineering",
+      "theme": "Data Profiling Report",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 5,
+          "name": "Data Profiling Report",
+          "phase_id": 5,
+          "issues": [
+            {
+              "id": 34,
+              "title": "Extract sample datasets from each source system (DB, API, files)",
+              "milestone_id": 5,
+              "git_issue_number": null
+            },
+            {
+              "id": 35,
+              "title": "Conduct Exploratory Data Analysis",
+              "milestone_id": 5,
+              "git_issue_number": null
+            },
+            {
+              "id": 36,
+              "title": "Run profiling queries to compute null %, distinct counts, distributions",
+              "milestone_id": 5,
+              "git_issue_number": null
+            },
+            {
+              "id": 37,
+              "title": "Identify anomalies such as outliers, unexpected formats, skew",
+              "milestone_id": 5,
+              "git_issue_number": null
+            },
+            {
+              "id": 38,
+              "title": "Detect duplicate records and key violations",
+              "milestone_id": 5,
+              "git_issue_number": null
+            },
+            {
+              "id": 39,
+              "title": "Validate actual values against defined data types",
+              "milestone_id": 5,
+              "git_issue_number": null
+            },
+            {
+              "id": 40,
+              "title": "Summarize key findings and potential impact on downstream use cases",
+              "milestone_id": 5,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "3. Planning & Infrastructure Strategy",
+      "vertical": "Data Engineering",
+      "theme": "Infrastructure Provisioning Plan",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 6,
+          "name": "Infrastructure Provisioning Plan",
+          "phase_id": 6,
+          "issues": [
+            {
+              "id": 41,
+              "title": "Gather infrastructure requirements from BRD, FRD, and NFR documents",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 42,
+              "title": "Identify compute, storage, and networking needs based on data volumes and workloads",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 43,
+              "title": "Define capacity requirements for current and projected scale",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 44,
+              "title": "Document infrastructure architecture options (cloud/on-prem/hybrid)",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 45,
+              "title": "Define provisioning approach (IaC vs manual provisioning strategy)",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 46,
+              "title": "Identify dependencies on enterprise infrastructure and shared services",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 47,
+              "title": "Define provisioning timelines and sequencing",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 48,
+              "title": "Align infrastructure plan with DevOps and platform teams",
+              "milestone_id": 6,
+              "git_issue_number": null
+            },
+            {
+              "id": 49,
+              "title": "Document assumptions, constraints, and risks",
+              "milestone_id": 6,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "4. Architecture & Solution Design",
+      "vertical": "Data Engineering",
+      "theme": "Architecture Design Document",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 7,
+          "name": "Architecture Design Document",
+          "phase_id": 7,
+          "issues": [
+            {
+              "id": 50,
+              "title": "Review enterprise data platform landscape and standards",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 51,
+              "title": "Analyze existing systems, integrations, and reusable components",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 52,
+              "title": "Identify upstream/downstream dependencies and constraints",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 53,
+              "title": "Define end-to-end architecture (ingestion \u2192 processing \u2192 consumption)",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 54,
+              "title": "Select architecture patterns (batch, streaming, medallion)",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 55,
+              "title": "Define system boundaries and interaction points",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 56,
+              "title": "Identify reusable datasets, pipelines, and services",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 57,
+              "title": "Align with enterprise architecture and avoid duplication",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 58,
+              "title": "Define scalability, performance, and availability requirements",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 59,
+              "title": "Incorporate security, compliance, and governance requirements",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 60,
+              "title": "Identify architectural risks and mitigation strategies",
+              "milestone_id": 7,
+              "git_issue_number": null
+            },
+            {
+              "id": 61,
+              "title": "Document key assumptions and constraints",
+              "milestone_id": 7,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "5. Data Modeling & Mapping Design",
+      "vertical": "Data Engineering",
+      "theme": "Source-to-Target Mapping (STM)",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 8,
+          "name": "Source-to-Target Mapping (STM)",
+          "phase_id": 8,
+          "issues": [
+            {
+              "id": 62,
+              "title": "Identify source tables, files, APIs, and data structures",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 63,
+              "title": "Analyze source data types, formats, and relationships",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 64,
+              "title": "Define target schema aligned with data model",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 65,
+              "title": "Map source fields to target fields at column level",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 66,
+              "title": "Define transformation logic (joins, filters, aggregations)",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 67,
+              "title": "Standardize data types and formats",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 68,
+              "title": "Define validation rules (nulls, ranges, formats)",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 69,
+              "title": "Identify mandatory vs optional fields",
+              "milestone_id": 8,
+              "git_issue_number": null
+            },
+            {
+              "id": 70,
+              "title": "Define handling for invalid or missing data",
+              "milestone_id": 8,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "6. Development & Build",
+      "vertical": "Data Engineering",
+      "theme": "ETL / ELT Pipeline Design Document",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 9,
+          "name": "ETL / ELT Pipeline Design Document",
+          "phase_id": 9,
+          "issues": [
+            {
+              "id": 71,
+              "title": "Design pipelines aligned to source-to-target mappings",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 72,
+              "title": "Create Bronze \u2192 Silver \u2192 Gold layer transformations",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 73,
+              "title": "Map pipelines to business requirements and data domains",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 74,
+              "title": "Implement raw ingestion with append-only patterns",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 75,
+              "title": "Support ingestion from files, APIs, and databases",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 76,
+              "title": "Develop cleansing, deduplication, and transformation logic",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 77,
+              "title": "Apply data quality rules and validations",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 78,
+              "title": "Build aggregated data models for consumption",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 79,
+              "title": "Define DAG dependencies across pipelines",
+              "milestone_id": 9,
+              "git_issue_number": null
+            },
+            {
+              "id": 80,
+              "title": "Implement incremental loads using watermarks/CDC",
+              "milestone_id": 9,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "7. Quality Engineering & Validation",
+      "vertical": "Data Engineering",
+      "theme": "Data Validation Framework",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 10,
+          "name": "Data Validation Framework",
+          "phase_id": 10,
+          "issues": [
+            {
+              "id": 81,
+              "title": "Define validation layers (Bronze, Silver, Gold)",
+              "milestone_id": 10,
+              "git_issue_number": null
+            },
+            {
+              "id": 82,
+              "title": "Implement schema and data quality checks",
+              "milestone_id": 10,
+              "git_issue_number": null
+            },
+            {
+              "id": 83,
+              "title": "Embed validation into pipeline execution",
+              "milestone_id": 10,
+              "git_issue_number": null
+            },
+            {
+              "id": 84,
+              "title": "Block downstream processing on validation failures",
+              "milestone_id": 10,
+              "git_issue_number": null
+            },
+            {
+              "id": 85,
+              "title": "Store validation results in centralized tables",
+              "milestone_id": 10,
+              "git_issue_number": null
+            },
+            {
+              "id": 86,
+              "title": "Generate validation scorecards",
+              "milestone_id": 10,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "8. Data Governance",
+      "vertical": "Data Engineering",
+      "theme": "Master Data Management (MDM)",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 11,
+          "name": "Master Data Management (MDM)",
+          "phase_id": 11,
+          "issues": [
+            {
+              "id": 87,
+              "title": "Implement master data entities and structures",
+              "milestone_id": 11,
+              "git_issue_number": null
+            },
+            {
+              "id": 88,
+              "title": "Apply matching and deduplication rules",
+              "milestone_id": 11,
+              "git_issue_number": null
+            },
+            {
+              "id": 89,
+              "title": "Implement golden record and survivorship logic",
+              "milestone_id": 11,
+              "git_issue_number": null
+            },
+            {
+              "id": 90,
+              "title": "Maintain consistency across systems",
+              "milestone_id": 11,
+              "git_issue_number": null
+            },
+            {
+              "id": 91,
+              "title": "Define stewardship workflows and ownership",
+              "milestone_id": 11,
+              "git_issue_number": null
+            },
+            {
+              "id": 92,
+              "title": "Monitor master data quality",
+              "milestone_id": 11,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "9. Release & Deployment",
+      "vertical": "Data Engineering",
+      "theme": "Deployment Runbook",
+      "source": "workflow_db",
+      "status": "pending",
+      "milestones": [
+        {
+          "id": 12,
+          "name": "Deployment Runbook",
+          "phase_id": 12,
+          "issues": [
+            {
+              "id": 93,
+              "title": "Define deployment steps and execution order",
+              "milestone_id": 12,
+              "git_issue_number": null
+            },
+            {
+              "id": 94,
+              "title": "Identify pipelines and dependencies for release",
+              "milestone_id": 12,
+              "git_issue_number": null
+            },
+            {
+              "id": 95,
+              "title": "Document deployment scripts and commands",
+              "milestone_id": 12,
+              "git_issue_number": null
+            },
+            {
+              "id": 96,
+              "title": "Perform pre-deployment validation checks",
+              "milestone_id": 12,
+              "git_issue_number": null
+            },
+            {
+              "id": 97,
+              "title": "Configure environment-specific settings",
+              "milestone_id": 12,
+              "git_issue_number": null
+            },
+            {
+              "id": 98,
+              "title": "Validate deployment execution",
+              "milestone_id": 12,
+              "git_issue_number": null
+            },
+            {
+              "id": 99,
+              "title": "Perform post-deployment data validation",
+              "milestone_id": 12,
+              "git_issue_number": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Data Science \u2014 Setup",
+      "vertical": "Data Science",
+      "theme": "General",
+      "source": "llm_fallback",
+      "status": "pending",
+      "milestones": []
+    }
+  ],
+  "current_phase": 1,
+  "current_milestone": 1,
+  "current_issue": 8,
+  "documents": {
+    "l1_plan": {
+      "status": "APPROVED",
+      "approved_by": "openclaw-control-ui",
+      "approved_at": "2026-03-27T18:14:52.251278+00:00",
+      "final_path": "/home/node/.openclaw/workspace/projects/alpha-test/delivery/l1_plan_FINAL_APPROVED_v1.md"
+    },
+    "requirements": {
+      "status": "APPROVED",
+      "approved_by": "openclaw-control-ui",
+      "approved_at": "2026-03-27T18:14:52.252514+00:00",
+      "final_path": "/home/node/.openclaw/workspace/projects/alpha-test/delivery/requirements_FINAL_APPROVED_v1.md"
+    },
+    "milestones": {
+      "status": "APPROVED",
+      "approved_by": "openclaw-control-ui",
+      "approved_at": "2026-03-27T18:14:52.259807+00:00",
+      "final_path": "/home/node/.openclaw/workspace/projects/alpha-test/delivery/milestones_FINAL_APPROVED.json"
+    },
+    "task_overview": {
+      "status": "APPROVED",
+      "approved_by": "openclaw-control-ui",
+      "approved_at": "2026-03-27T18:14:52.261507+00:00",
+      "final_path": "/home/node/.openclaw/workspace/projects/alpha-test/delivery/task_overview_FINAL_APPROVED_v1.md"
+    }
+  },
+  "git": {
+    "milestones_created": [
+      {
+        "id": 2,
+        "title": "[Phase 1] Business Requirement Document (BRD)",
+        "phase_id": 1
+      },
+      {
+        "id": 3,
+        "title": "[Phase 2] Maintenance & Resolution Documentation",
+        "phase_id": 2
+      },
+      {
+        "id": 4,
+        "title": "[Phase 3] Pipeline Optimization Report",
+        "phase_id": 3
+      },
+      {
+        "id": 5,
+        "title": "[Phase 4] Code Versioning",
+        "phase_id": 4
+      },
+      {
+        "id": 6,
+        "title": "[Phase 5] Data Profiling Report",
+        "phase_id": 5
+      },
+      {
+        "id": 7,
+        "title": "[Phase 6] Infrastructure Provisioning Plan",
+        "phase_id": 6
+      },
+      {
+        "id": 8,
+        "title": "[Phase 7] Architecture Design Document",
+        "phase_id": 7
+      },
+      {
+        "id": 9,
+        "title": "[Phase 8] Source-to-Target Mapping (STM)",
+        "phase_id": 8
+      },
+      {
+        "id": 10,
+        "title": "[Phase 9] ETL / ELT Pipeline Design Document",
+        "phase_id": 9
+      },
+      {
+        "id": 11,
+        "title": "[Phase 10] Data Validation Framework",
+        "phase_id": 10
+      },
+      {
+        "id": 12,
+        "title": "[Phase 11] Master Data Management (MDM)",
+        "phase_id": 11
+      },
+      {
+        "id": 13,
+        "title": "[Phase 12] Deployment Runbook",
+        "phase_id": 12
+      }
+    ],
+    "issues_created": [
+      {
+        "number": 1,
+        "title": "Identify stakeholders using org charts",
+        "closed": true,
+        "artefact": "Stakeholder register from user answers \u2014 all roles consolidated to Harshita Gupta (Phase 1); Mars contacts TBD"
+      },
+      {
+        "number": 2,
+        "title": "Prepare structured questionnaires covering goals, KPIs, pain points",
+        "closed": true,
+        "artefact": "Questionnaires from user answers (primary) + data enrichment. Churn label definition flagged as critical OI. 10 open items logged."
+      },
+      {
+        "number": 3,
+        "title": "Capture and consolidate stakeholder expectations and conflicts",
+        "closed": true,
+        "artefact": "Expectations + 2 conflicts: C-01 subscription leakage, C-02 feature aggregation ownership. 7 open items. Hard deadline June 30 2026."
+      },
+      {
+        "number": 4,
+        "title": "Analyze current business processes through SME walkthroughs",
+        "closed": true,
+        "artefact": "SME walkthroughs W-01/W-02/W-03 complete. Process documented from transcripts: 45d rule, Deepa SPOF, dbt marts, prior XGBoost leakage, MWAA 2.8.1 Python 3.11, DPA ~4 weeks, code-complete deadline June 1."
+      },
+      {
+        "number": 5,
+        "title": "Document as-is workflows with systems, data usage, and manual steps",
+        "closed": true,
+        "artefact": "4 as-is workflows: data extraction (dbt/Fivetran), Deepa manual processing (2hrs), campaign execution (SFMC+Kaleyra), Rohan reporting. Data lineage map included."
+      },
+      {
+        "number": 6,
+        "title": "Quantify business impact (time, cost, risk) where possible",
+        "closed": true,
+        "artefact": "Business impact quantified: INR 174.9 Cr/yr revenue protected at 10pp RC Direct churn reduction. Build cost INR 20.7L. ROI ~845x gross. Outreach cost INR 13.10/customer/cycle. 5 open items for Mars Finance validation."
+      },
+      {
+        "number": 7,
+        "title": "Define clear problem statement aligned with business objectives",
+        "closed": true,
+        "artefact": "Problem statement defined: weekly ML churn prediction pipeline, RC Direct 31.4%\u2192<20%, LightGBM primary, precision@decile>40%, Deepa SPOF eliminated. 4 open items (churn label, vet_referred, subscription_active leakage, holdout design)."
+      },
+      {
+        "number": 8,
+        "title": "Map future workflows with automation opportunities",
+        "closed": false
+      },
+      {
+        "number": 9,
+        "title": "Identify business KPIs and define success criteria",
+        "closed": false
+      },
+      {
+        "number": 10,
+        "title": "Document assumptions and potential risks with mitigation approach",
+        "closed": false
+      },
+      {
+        "number": 11,
+        "title": "Compile BRD sections into structured document",
+        "closed": false
+      },
+      {
+        "number": 12,
+        "title": "Conduct review sessions and incorporate stakeholder feedback",
+        "closed": false
+      },
+      {
+        "number": 13,
+        "title": "Obtain formal sign-off",
+        "closed": false
+      }
+    ]
+  },
+  "progress_log": "delivery/progress_log.md",
+  "last_updated": "2026-03-31T10:07:52.530468+00:00",
+  "answers": {
+    "timeline": "12 weeks",
+    "tools": "Airflow, Snowflake, Python",
+    "approvers": "openclaw-control-ui",
+    "prior_work": "none, start from scratch",
+    "git_repo": "https://github.com/harshi12musigma-stack/2048-mine"
+  },
+  "delivery_timeline": "12 weeks",
+  "tools": "Airflow, Snowflake, Python",
+  "approval_policy": "owner",
+  "git_repo_url": "https://github.com/harshi12musigma-stack/2048-mine",
+  "planning_answers": {
+    "timeline": "12 weeks",
+    "tools": "Airflow, Snowflake, Python",
+    "approvers": "just me",
+    "prior_work": "none",
+    "git_repo": "https://github.com/harshi12musigma-stack/2048-mine"
+  },
+  "issue_answers": {
+    "Identify stakeholders using org charts": {
+      "practitioner_doer": {
+        "names": [
+          "Harshita Gupta"
+        ],
+        "roles": [
+          "Acting as DS/DE execution lead"
+        ],
+        "skill_gaps": "To be confirmed"
+      },
+      "practitioner_leader": {
+        "name": "Harshita Gupta",
+        "role": "Project Lead / BSH",
+        "team": "Labs, Mu Sigma",
+        "stakeholder_comms_owner": "Harshita Gupta"
+      },
+      "business_user": {
+        "names": [
+          "Harshita Gupta (placeholder \u2014 acting)",
+          "Priya Sharma",
+          "Karthik Nair",
+          "Rahul Mehta",
+          "Deepa"
+        ],
+        "roles": [
+          "Head of CRM & Retention (Mars)",
+          "Analytics & Data Lead (Mars)",
+          "IT Platform & Infrastructure Lead (Mars)",
+          "Retention Coordinator (Mars) \u2014 UAT participant"
+        ],
+        "pipeline_consumer": "Priya Sharma + Deepa (operational list) + Karthik (Snowflake)",
+        "it_contact": "Rahul Mehta \u2014 IT Platform & Infrastructure Lead, Mars India"
+      },
+      "business_leader": {
+        "name": "Rohan",
+        "role": "CRM & Retention Manager (Priya's manager)",
+        "organisation": "Mars India",
+        "responsibilities": "Executive dashboard consumer \u2014 weekly summary: at-risk count, actioned, recovery rate",
+        "note": "Full name TBD \u2014 referred to as Rohan in session transcript"
+      },
+      "team_members": [
+        "Vishwavani",
+        "Savikar Garg"
+      ],
+      "bsh": "Harshita Gupta",
+      "client": "Mars",
+      "project_type": "client",
+      "placeholder_note": "All Mars contacts now confirmed. Initial TBDs resolved.",
+      "consumers": [
+        "Priya Sharma (Mars) \u2014 campaign execution lead",
+        "Deepa (Mars) \u2014 operational scored list, UAT participant",
+        "Rohan (Mars) \u2014 executive dashboard (at-risk count, actioned, recovery rate)",
+        "Karthik Nair (Mars) \u2014 Snowflake/analytics consumption",
+        "Harshita Gupta (Mu Sigma) \u2014 project oversight",
+        "Vishwavani / Savikar (Mu Sigma) \u2014 DS/DE delivery",
+        "Zubin (Mu Sigma, CTO) \u2014 executive visibility",
+        "Srini (Mu Sigma, Manager) \u2014 delivery oversight"
+      ],
+      "source_update": "Mars contacts confirmed from W-01/W-02/W-03 session transcripts, 2026-03-31"
+    },
+    "Prepare structured questionnaires covering goals, KPIs, pain points": {
+      "practitioner_doer": {
+        "data_sources": {
+          "Customer_CRM": [
+            "customer_id",
+            "segment",
+            "region",
+            "city",
+            "registration_date"
+          ],
+          "Transaction_DB": [
+            "last_purchase_date",
+            "purchase_count_90d",
+            "purchase_count_12m",
+            "avg_order_value_inr",
+            "total_spend_12m_inr"
+          ],
+          "Loyalty_Platform": [
+            "loyalty_tier",
+            "loyalty_points_balance"
+          ],
+          "Subscription_System": [
+            "subscription_active",
+            "days_since_subscription_change"
+          ],
+          "Marketing_Engagement": [
+            "email_open_rate_90d",
+            "whatsapp_engaged_90d",
+            "num_campaign_clicks_90d"
+          ],
+          "Customer_Service": [
+            "num_complaints_12m"
+          ],
+          "Vet_Referral_System": [
+            "vet_referred"
+          ]
+        },
+        "data_in_snowflake": "TBD \u2014 dataset structure (tokenised IDs, no raw PII, structured naming) is consistent with warehouse landing layer. Source system TBD from client.",
+        "prior_modeling": "No evidence \u2014 no model_score, prev_risk_flag, or campaign_treatment column. Current state is likely rule-based RFM (recency threshold). No ML baseline exists.",
+        "airflow_deployment": "TBD \u2014 not determinable from data.",
+        "data_quality_issues": [
+          "No nulls in sample \u2014 but sample is curated (80 rows); real data quality TBD",
+          "Churn definition implicit \u2014 churn_label=1 aligns exactly with days_since_last_purchase >= 90. Must be formally agreed as label definition before training.",
+          "Bronze tier 60.7% churn rate (17/28) \u2014 unusually high, needs investigation for label contamination or sampling bias in production",
+          "All 11 RC_Direct churned customers have vet_referred=Y \u2014 prescription lapse likely real failure mode, needs validation on larger population",
+          "email_open_rate for all churned customers rounds to 0.0 \u2014 risk of post-churn data leakage; must check during EDA"
+        ]
+      },
+      "practitioner_leader": {
+        "scoring_cadence": "Weekly batch \u2014 confirmed. Feature windows are 90d and 12m aggregates; days_since_last_purchase distribution shows risk building over weeks. Daily adds no signal for this feature set.",
+        "hard_deadline": "TBD",
+        "out_of_scope_phase1": [
+          "Real-time event scoring \u2014 no event timestamps or clickstream in data",
+          "Uplift/causal modeling \u2014 no treatment/control assignment column",
+          "Multi-touch attribution \u2014 no campaign sequence data",
+          "Geographic/demographic segmentation beyond region/city \u2014 no age, household, income data"
+        ],
+        "team_constraints": "TBD"
+      },
+      "business_user": {
+        "primary_goal": "Protect RC_Direct revenue by reducing churn from 31.4%. RC_Direct active customers average INR 61,202/year vs PED_Club INR 17,719/year \u2014 RC_Direct is simultaneously highest value and highest churn risk.",
+        "segment_focus": "Both RC_Direct and PED_Club in scope. RC_Direct is clear priority \u2014 3.4x revenue per active customer, higher churn rate, distinct vet-referral signal.",
+        "product_lines": [
+          "Royal Canin",
+          "Pedigree",
+          "Whiskas",
+          "Sheba"
+        ],
+        "current_process": "Implied rule-based recency engine \u2014 days_since_last_purchase is the only time-based signal and perfectly predicts label. No prev_risk_flag or treatment history. Likely manual trigger: no purchase in 90 days = at risk. Model must identify risk BEFORE day 90 using declining engagement signals.",
+        "pii_restrictions": "PII already handled in sample \u2014 tokenised customer_id (MARS-IN-XXXXXX), no names/emails/phones. Pseudonymisation policy likely in place. Formal DPA and field-level classification TBD from Mars Legal."
+      },
+      "business_leader": {
+        "success_6m": "Reduce overall churn from 27.5% to below 18% in scored population. RC_Direct specifically: 31.4% to below 20%. Target Bronze tier (60.7% churn) and Silver tier (18.5%) for intervention. Gold and Platinum have 0% churn \u2014 no retention spend needed.",
+        "cost_of_inaction": "11 churned RC_Direct customers \u00d7 INR 61,202 avg active annual spend = ~INR 6.7L annualised at-risk revenue in 80-customer sample. Scales linearly. 100% of churned customers have email_open_rate ~0 and whatsapp_engaged=0 \u2014 no win-back channel exists once churned. Churn is effectively one-way.",
+        "hard_constraints": "TBD"
+      },
+      "data_source": "User-provided answers (primary) + mars_churn_sample.csv (enrichment only)",
+      "data_enrichment_note": "Data was used to validate and enrich user answers \u2014 NOT to substitute for them. User answers are the authoritative source."
+    },
+    "Capture and consolidate stakeholder expectations and conflicts": {
+      "practitioner_doer": {
+        "technical_constraints": [
+          "Snowflake tier: TBD \u2014 data appears pre-aggregated upstream (90d/12m windows already computed). Read/write pattern needs confirmation before pipeline design.",
+          "Python version: TBD \u2014 default 3.10+, but MWAA pins to its managed version. Must confirm with Mars IT.",
+          "Library restrictions: TBD \u2014 enterprise CPG clients often have InfoSec-approved package lists. Confirm with Mars IT.",
+          "Data volume: Sample is 80 rows; real population likely hundreds of thousands. Snowflake query cost for 90d/12m feature windows at scale needs testing."
+        ],
+        "ml_framework": {
+          "primary": "LightGBM \u2014 handles Bronze-tier class imbalance (60.7% churn), calibrated probabilities for threshold scoring",
+          "baseline": "Logistic Regression \u2014 interpretable, fast to validate against rule-based current state",
+          "not_recommended_phase1": [
+            "Deep learning",
+            "Neural collaborative filtering",
+            "Uplift/causal models"
+          ],
+          "note": "Mu Sigma recommendation \u2014 open to override if Mars has mandate (e.g. existing SageMaker/Azure ML environment)"
+        }
+      },
+      "practitioner_leader": {
+        "top_3_phase1_deliverables": [
+          "1. Agreed churn label definition ratified by Mars \u2014 churn_label maps to days_since_last_purchase >= 90 implicitly. Must be formally agreed before any training. If definition changes, feature windows and pipeline rework follow.",
+          "2. Production-ready weekly scoring DAG in Airflow \u2014 not a notebook, not a manual script. Break the manual/rule-based dependency.",
+          "3. Scored output table consumable by Mars CRM/campaign team without DS involvement \u2014 agreed output schema, decision threshold, handoff process. Not just model accuracy."
+        ],
+        "internal_pressures": [
+          "Harshita leading alongside parallel commitments \u2014 full allocation not assumed",
+          "Vishwavani and Savikar allocation % not formally locked \u2014 resourcing risk if other projects compete",
+          "Hard deadline: June 30, 2026 \u2014 ~13 weeks from March 31. Tight for: data access \u2192 EDA \u2192 feature engineering \u2192 model training \u2192 pipeline build \u2192 UAT \u2192 production. Any DPA or data access delay eats directly into this window."
+        ],
+        "hard_deadline": "2026-06-30"
+      },
+      "business_user": {
+        "top_3_mars_expectations": [
+          "1. Early warning on RC_Direct customers BEFORE day 90 \u2014 signals at 30\u201345 days of declining engagement (email_open_rate, whatsapp_engaged, loyalty_points_balance). By day 90 it is already too late.",
+          "2. Ranked score list loadable directly into campaign tool \u2014 weekly file or Snowflake table: customer_id, churn_score, risk_tier (High/Medium/Low), recommended_action. No DS required to act on it.",
+          "3. Bronze-tier prioritisation \u2014 Bronze has 60.7% churn rate. Retention budget is finite. Model must surface highest-probability churners. Gold and Platinum have 0% churn \u2014 targeting them wastes spend."
+        ],
+        "de_ds_tensions": [
+          "Feature leakage risk: subscription_active=N and days_since_subscription_change are perfectly correlated with churn. Must resolve before training: is subscription cancellation a cause of churn (valid feature) or synonymous with churn (leakage)? If it is the churn event itself, it cannot be a predictor.",
+          "Aggregation ownership: 90d/12m windows are pre-computed in data. DE will own aggregation in Snowflake SQL. DS may want different windows during experimentation. Feature store ownership and freeze point must be agreed before parallel work starts \u2014 otherwise DE builds one thing and DS trains on another."
+        ]
+      },
+      "business_leader": {
+        "single_most_important_outcome": "Reduce RC_Direct churn from 31.4% to below 20% within two scored quarters post-launch. RC_Direct = INR 61,202/year vs PED_Club INR 17,719 \u2014 3.4x more valuable. Pipeline ROI lives or dies on RC_Direct retention.",
+        "out_of_scope_phase1": {
+          "Real-time scoring": "No event stream data \u2014 all features are batch aggregates",
+          "Automated model retraining": "Requires monitoring infrastructure not in scope yet",
+          "CRM integration/campaign execution": "Output table is Phase 1; CRM integration is Phase 2",
+          "Recommendation engine": "No historical treatment/response data \u2014 cannot train",
+          "LTV modelling": "No pricing, margin, or CLV columns in data",
+          "Churn reason analysis": "num_complaints_12m only qualitative signal \u2014 insufficient for root-cause modelling"
+        }
+      },
+      "data_source": "User-provided answers (primary) \u2014 Harshita Gupta, 2026-03-30",
+      "data_enrichment": "mars_churn_sample.csv used to validate and quantify answers only"
+    },
+    "Analyze current business processes through SME walkthroughs": {
+      "sessions_conducted": [
+        "W-01",
+        "W-02",
+        "W-03"
+      ],
+      "date": "2026-03-31",
+      "W01": {
+        "attendee_mars": "Priya Sharma \u2014 Head of CRM & Retention, Mars Petcare India",
+        "attendee_mu_sigma": "Harshita Gupta",
+        "current_process": {
+          "trigger": "Recency threshold \u2014 45 days for RC Direct, ~60 days for Pedigree Club",
+          "delivery": "SQL query (Redash) emails Excel CSV every Monday morning",
+          "run_by": "Karthik team schedules via cron job \u2014 fragile, missed 2 weeks ago due to server maintenance",
+          "manual_processing": "~2 hours every Monday by coordinator Deepa \u2014 filtering by segment, removing recently contacted, removing customers with pending delivery, rough prioritisation by spend",
+          "single_point_of_failure": "Deepa \u2014 only person who knows full filter logic. Undocumented.",
+          "churn_definition": "NOT formally defined. Internally: lapsed=45d, churned=90d. Marketing says 60d. Finance says 120d. Inconsistent across teams."
+        },
+        "retention_actions": {
+          "RC_Direct_sequence": "Day 45: WhatsApp (personalised with vet name) \u2192 Day 50: Email \u2192 Day 55: Outbound call from 7-person retention desk",
+          "RC_Direct_capacity": "4,500\u20135,000 outbound calls per week. Normal at-risk volume: 1,200\u20131,500/week. Peak: ~3,000/week. Capacity not a constraint for RC Direct.",
+          "Pedigree_Club": "Email and WhatsApp only \u2014 no calls unless Gold tier or >INR 20K annual spend. 8x customer base but no call capacity.",
+          "email_tool": "Salesforce Marketing Cloud (SFMC)",
+          "whatsapp_tool": "Kaleyra via WABA. NOT integrated with SFMC \u2014 two separate tools, manual reconciliation.",
+          "retention_tracking": "Re-purchase within 30 days of contact = retention save. NO holdout group. Reported rates likely inflated.",
+          "current_retention_rate": "~22% RC Direct, ~14% Pedigree Club (self-reported, no holdout)"
+        },
+        "pain_points": [
+          "Find out too late \u2014 wants signals at 20\u201325 days, not 45+",
+          "Ghost purchasers \u2014 low-baseline customers never trigger 45-day rule",
+          "Channel-switch false positives \u2014 customers buying via Amazon/vet clinic flagged as at-risk when they are fine",
+          "Two separate campaign tools (SFMC + Kaleyra) require manual reconciliation",
+          "No individual-level engagement trending \u2014 only aggregate open rates"
+        ],
+        "output_requirements": {
+          "landing_zone": "Salesforce \u2014 not just Snowflake. CRM team needs it importable into SFMC without IT involvement.",
+          "scoring_deadline": "Scores in Salesforce by Monday EOD. Campaign brief to SFMC by Tuesday 6 PM for Wednesday send. Sunday night scoring preferred.",
+          "risk_tiers": "4 tiers required: High / Medium / Low / Do Not Contact (suppression for Gold+Platinum)",
+          "consumers": [
+            "Deepa (coordinator \u2014 operational list)",
+            "Rohan (manager \u2014 executive summary dashboard: at-risk count, actioned count, recovery rate)"
+          ]
+        },
+        "new_stakeholders_identified": [
+          "Priya Sharma \u2014 Head of CRM & Retention (Mars)",
+          "Deepa \u2014 Retention coordinator (Mars) \u2014 key UAT participant",
+          "Rohan \u2014 Priya's manager (Mars) \u2014 executive dashboard consumer"
+        ],
+        "confirmed_decisions": [
+          "Scoring cadence: Weekly, Sunday night",
+          "Output: 4-tier label (High / Medium / Low / Do Not Contact)"
+        ],
+        "open_items": [
+          "Formal churn definition \u2014 needs cross-functional alignment (CRM + Finance + Analytics)",
+          "Salesforce integration spec \u2014 Phase 1 out vs in scope",
+          "Deepa to be included in UAT"
+        ]
+      },
+      "W02": {
+        "attendee_mars": "Karthik Nair \u2014 Analytics & Data Lead, Mars India",
+        "attendee_mu_sigma": "Harshita Gupta, Vishwavani",
+        "data_architecture": {
+          "Salesforce_CRM": "Customer master in Snowflake via Fivetran",
+          "Oracle_ecommerce": "Transaction DB in Snowflake via Fivetran",
+          "Capillary_loyalty": "SFTP daily dump \u2192 S3 \u2192 custom Python script \u2192 Snowflake. Fragile \u2014 format changed twice in last year. No data quality checks.",
+          "dbt_marts": "dbt project with  schema. 90d and 12m windows recomputed daily. Full refresh model \u2014 ~90 min runtime on medium warehouse.",
+          "complaint_data": "Freshdesk. num_complaints_12m in sample was manual export \u2014 production ingestion pipeline not built yet.",
+          "other_data": "Nielsen panel data (aggregate, not individual) \u2014 not useful for Phase 1 individual scoring"
+        },
+        "prior_modeling": {
+          "model": "XGBoost by internal DS Manish \u2014 early 2025",
+          "outcome": "Classic feature leakage \u2014 subscription_active used as feature, raw last_purchase_date used. 90% accuracy on test set, ~15% precision at top decile in production. Never deployed.",
+          "lesson": "Subscription cancellation may be synonymous with churn event \u2014 must not be used as feature",
+          "notebooks": "Available \u2014 Karthik to share after session"
+        },
+        "customer_population": {
+          "RC_Direct_total": 285000,
+          "Pedigree_Club_total": 1100000,
+          "RC_Direct_scoreable": 170000,
+          "Pedigree_Club_scoreable": 650000,
+          "training_window": "2022 onwards \u2014 pre-2022 has migration gaps"
+        },
+        "data_quality": {
+          "Fivetran_freshness": "Runs nightly at 2 AM. Sunday night scores = transactions up to Friday. 1-2 day lag acceptable for weekly scoring.",
+          "whatsapp_reliability": "Directionally correct but ~90% webhook reliability \u2014 not precise",
+          "email_open_rate": "Reliable \u2014 pixel-tracked via SFMC",
+          "identity_bridge": "CUST_MASTER.ID_BRIDGE \u2014 ~68% coverage RC Direct, ~55% Pedigree Club. ~1/3 of customers have incomplete cross-system identity."
+        },
+        "confirmed_decisions": [
+          "Training window: 2022\u2013present",
+          "Feature aggregations from existing dbt mart, refactored to incremental",
+          "LightGBM primary, Logistic Regression baseline",
+          "subscription_active: leakage confirmed \u2014 must resolve before training"
+        ],
+        "open_items": [
+          "Karthik to share prior XGBoost notebooks",
+          "Decision on subscription_active feature vs label",
+          "Freshdesk production ingestion pipeline \u2014 DE scope",
+          "Identity bridge coverage flag in model output"
+        ]
+      },
+      "W03": {
+        "attendee_mars": "Rahul Mehta \u2014 IT Platform & Infrastructure Lead, Mars India",
+        "attendee_mu_sigma": "Harshita Gupta, Savikar",
+        "infrastructure": {
+          "Snowflake_edition": "Enterprise",
+          "Snowflake_region": "AWS ap-south-1 (Mumbai)",
+          "Snowflake_accounts": "Separate non-prod and prod accounts. Dev=MARS_DEV schema, Staging=MARS_STG schema (within non-prod). MARS_PROD = separate account.",
+          "PII_in_nonprod": "Tokenised customer IDs, masked email/phone. Same as sample data.",
+          "Mu_Sigma_access": "Service account for pipelines. Write access to MU_SIGMA_DEV schema in MARS_DEV.",
+          "warehouse_sizing": "Start on X-Small. Scale-up via change request \u2014 no auto-provisioning to vendors."
+        },
+        "airflow": {
+          "type": "MWAA",
+          "version": "2.8.1",
+          "python_version": "3.11",
+          "LightGBM_installed": false,
+          "LightGBM_request_eta": "3-5 days after submission",
+          "packages_installed": [
+            "pandas",
+            "numpy",
+            "scikit-learn"
+          ],
+          "deployment_access": "Karthik team has dev DAG access. Production requires ServiceNow change request + architecture board + 1-week UAT = 2\u20134 weeks total."
+        },
+        "DPA": {
+          "status": "Under review",
+          "clauses_under_review": [
+            "Data residency (must stay in India-region)",
+            "Sub-processor clause (resolved: all processing in Mars Snowflake \u2014 no external infra)"
+          ],
+          "estimated_completion": "3\u20134 weeks. Data access earliest early May. Safe assumption: first week of May.",
+          "implication": "April = design and specification only. No pipeline code against live data until DPA signed."
+        },
+        "constraints": {
+          "vet_referred_field": "Under InfoSec health data classification review. Treat as optional feature \u2014 do NOT make load-bearing. Ruling expected in 2\u20133 weeks.",
+          "production_freeze": "Oct 1 \u2013 Nov 15 annually. No production changes in this window.",
+          "production_deployment_cycle": "2\u20134 weeks from code complete. Must reach code-complete by ~June 1 for June 30 deadline.",
+          "service_account_provisioning": "2-week SLA \u2014 flag early after DPA signed."
+        },
+        "confirmed_decisions": [
+          "All training and inference stays within Mars Snowflake \u2014 no data leaves to external infrastructure",
+          "Python 3.11, MWAA 2.8.1",
+          "Snowflake: X-Small for dev, scale-up request for production",
+          "DPA-first policy \u2014 no data access until signed"
+        ],
+        "open_items": [
+          "DPA completion \u2014 track weekly",
+          "LightGBM package request \u2014 submit as soon as DPA signed",
+          "Service account provisioning \u2014 flag early (2-week SLA)",
+          "vet_referred classification ruling \u2014 expected 2\u20133 weeks"
+        ]
+      },
+      "data_source": "User-provided session transcripts (primary). No assumptions."
+    },
+    "Document as-is workflows with systems, data usage, and manual steps": {
+      "practitioner_doer": {
+        "include_data_pipeline": true,
+        "include_capillary_fragility": true,
+        "include_dbt_fullrefresh": true,
+        "note": "Document full as-is including Karthik data layer, not just Priya business process"
+      },
+      "practitioner_leader": {
+        "scope": "Full as-is \u2014 both business/CRM process (Priya) AND data pipeline process (Karthik Redash + dbt)"
+      },
+      "business_user": {
+        "priya_process_complete": true,
+        "corrections": "None \u2014 Priya session documented accurately"
+      },
+      "business_leader": {
+        "include_rohan_reporting": true,
+        "note": "Weekly retention summary to Rohan is part of as-is reporting workflow"
+      },
+      "source": "User confirmed all yes \u2014 2026-03-30"
+    },
+    "Quantify business impact (time, cost, risk) where possible": {
+      "practitioner_doer": {
+        "data_volume": {
+          "RC_Direct_total": 285000,
+          "RC_Direct_scoreable": 170000,
+          "PED_Club_total": 1100000,
+          "PED_Club_scoreable": 650000
+        },
+        "historical_depth": "2022-present (~4 years)",
+        "manual_effort": "Deepa: ~2 hrs every Monday = ~104 hrs/year on list processing"
+      },
+      "practitioner_leader": {
+        "build_run_cost": {
+          "mu_sigma_team_12wk": "INR 18.3L (DS + DE + 50% PL)",
+          "infra_3mo": "INR 2.4L (Snowflake Enterprise X-Small + MWAA small)",
+          "total_phase1": "INR 20.7L",
+          "assumptions": "Standard India consulting rates; Infra = Snowflake X-Small + MWAA small. Pending confirmation from Mu Sigma Finance and Rahul/IT on actual AWS bill."
+        },
+        "analyst_time_current": "~104 hrs/year (Deepa manual list processing) + Karthik team cron maintenance"
+      },
+      "business_user": {
+        "current_churn_rate": {
+          "RC_Direct": "31.4%",
+          "overall": "27.5%",
+          "PED_Club": "implied ~18.5% from sample"
+        },
+        "avg_revenue_per_customer_year": {
+          "RC_Direct": "INR 61,202",
+          "PED_Club": "INR 17,719"
+        },
+        "cost_per_outreach_attempt": {
+          "outbound_call": "INR 11.80 (7 agents x INR 42K/mo / 250K calls/yr)",
+          "email_sfmc": "INR 0.50",
+          "whatsapp_kaleyra": "INR 0.80",
+          "RC_Direct_full_sequence": "INR 13.10 per customer per cycle (WhatsApp + Email + Call)",
+          "note": "Estimates \u2014 Mars Finance to confirm Kaleyra contract rate and fully-loaded call centre cost"
+        }
+      },
+      "business_leader": {
+        "active_customers_in_scope": {
+          "RC_Direct": 285000,
+          "PED_Club": 1100000
+        },
+        "current_retention_rate": {
+          "RC_Direct": "~22% (self-reported, no holdout)",
+          "PED_Club": "~14% (self-reported, no holdout)"
+        },
+        "revenue_impact_10pp_reduction": {
+          "RC_Direct_customers_saved": 28500,
+          "revenue_protected_gross": "INR 174.9 Cr/year",
+          "phase1_build_cost": "INR 20.7L",
+          "roi_gross": "~845x (gross, pre-holdout correction)",
+          "roi_conservative_30pct_attribution": "~250x",
+          "mars_preapproved_target": "Not confirmed \u2014 Mars Finance to validate INR 61,202 avg spend on full 285K population and approved churn target"
+        },
+        "risk_quantification": {
+          "SPOF_Deepa": "One person holds all filter logic \u2014 any absence halts weekly campaign execution",
+          "Capillary_fragility": "Format changed twice in last year \u2014 each incident = data gap in campaign targeting",
+          "no_holdout": "Reported retention rates (22% RC Direct) are inflated \u2014 true baseline unknown",
+          "DPA_delay": "4-week DPA delay = 4 weeks of avoidable churn during design-only period",
+          "vet_referred_classification": "InfoSec ruling pending \u2014 may remove a key signal from RC Direct model"
+        }
+      },
+      "data_source": "User-provided answers (Harshita Gupta) from W-01/W-02/W-03 sessions + sample data enrichment. Mars Finance validation pending on cost figures."
+    },
+    "Define clear problem statement aligned with business objectives": {
+      "practitioner_doer": {
+        "core_technical_problem": "Binary classification: predict which individual customers will churn (lapse > 90 days) within the next 30 days, using 90d/12m behavioural aggregates, loyalty signals, and engagement metrics \u2014 scored weekly at customer level, output to Snowflake + Salesforce.",
+        "predictive_signals": [
+          "days_since_last_purchase \u2014 primary recency signal (current rule is this alone at 45d threshold)",
+          "email_open_rate_90d and whatsapp_engaged_90d \u2014 engagement decay preceding churn",
+          "loyalty_points_balance \u2014 declining balance signals reduced brand attachment",
+          "purchase_count_90d vs purchase_count_12m \u2014 frequency trend (deceleration)",
+          "loyalty_tier (Bronze highest risk at 60.7% churn rate)",
+          "vet_referred (ALL 11 churned RC Direct customers in sample \u2014 if InfoSec clears)",
+          "subscription_active \u2014 LEAKAGE RISK: must resolve whether this is a cause or synonymous with churn label before use"
+        ],
+        "excluded_features": [
+          "subscription_active (leakage \u2014 to be resolved pre-training)",
+          "days_since_subscription_change (correlated with churn event)",
+          "raw last_purchase_date (use delta/recency, not raw date)"
+        ]
+      },
+      "practitioner_leader": {
+        "one_sentence_problem": "Build a weekly ML-driven churn prediction pipeline that identifies RC Direct and Pedigree Club customers at risk of lapsing before the current 45-day rule triggers, enabling Mars India to run targeted retention campaigns and reduce RC Direct churn from 31.4% to below 20%.",
+        "success_target": {
+          "primary": "RC Direct churn rate: 31.4% \u2192 below 20% within 2 scored quarters post-launch",
+          "secondary": "Pedigree Club churn rate reduction (14% retention \u2192 20%+ retention)",
+          "operational": "Eliminate Deepa SPOF \u2014 scored list auto-generated in Snowflake/Salesforce by Sunday night, no manual intervention",
+          "model": "Precision at top decile > 40% (vs 15% in prior XGBoost attempt)"
+        }
+      },
+      "business_user": {
+        "trigger": "Two converging failures: (1) Capillary SFTP broke 2 weeks ago \u2014 at-risk list was not generated for a full week, customers churned untouched. (2) Deepa is the only person who knows the filter logic \u2014 one absence halts the entire retention program. The current system is too fragile for a 285K-customer program.",
+        "current_process_breakdown": [
+          "Rule fires too late: 45-day recency threshold means customer has already disengaged for 6+ weeks before first outreach",
+          "Ghost purchasers never trigger: low-frequency customers with longer natural purchase cycles always look at-risk",
+          "Channel-switch false positives: customers buying via Amazon or vet clinic flagged as churning when they are not",
+          "Manual reconciliation: SFMC and Kaleyra are two separate tools \u2014 Deepa manually reconciles every Monday, ~2hrs",
+          "No holdout: reported 22% retention rate is inflated \u2014 no control group, no true baseline"
+        ]
+      },
+      "business_leader": {
+        "decision_enabled": "Who to call, email, and WhatsApp this week \u2014 and who NOT to contact (Gold/Platinum suppression, channel fatigue avoidance). Today this is a manual judgement call by Deepa. The pipeline replaces that with a ranked, risk-tiered scored list: High / Medium / Low / Do Not Contact \u2014 ready in Salesforce by Monday morning.",
+        "consequence_of_inaction": "At current RC Direct churn rate of 31.4%: ~89,550 RC Direct customers churn annually. At INR 61,202 avg spend, that is ~INR 548 Cr gross revenue lost per year. The retention program is operating blind \u2014 no model, no holdout, no signal before day 45. Every week without this pipeline, ~1,700 RC Direct customers cross the 45-day threshold having received no early signal-based outreach."
+      },
+      "data_source": "Synthesised from Issues #1\u20136 confirmed answers. No new user input required."
+    }
+  }
+}
